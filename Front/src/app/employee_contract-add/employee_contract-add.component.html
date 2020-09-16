@@ -1,0 +1,75 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="employee_contract_addForm" novalidate>
+
+            
+			<div class="form-group">
+                <label class="col-md-4">number_contract</label>
+                <input type="text" class="form-control" formControlName="number_contract" #number_contract />
+            </div>
+            <div *ngIf="employee_contract_addForm.controls['number_contract'].invalid && (employee_contract_addForm.controls['number_contract'].dirty || employee_contract_addForm.controls['number_contract'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_addForm.controls['number_contract'].errors.required">
+                    Please Enter the number_contract
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">employee_id</label>
+                <input type="text" class="form-control" formControlName="employee_id" #employee_id />
+            </div>
+            <div *ngIf="employee_contract_addForm.controls['employee_id'].invalid && (employee_contract_addForm.controls['employee_id'].dirty || employee_contract_addForm.controls['employee_id'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_addForm.controls['employee_id'].errors.required">
+                    Please Enter the employee_id
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">clause_one</label>
+                <input type="text" class="form-control" formControlName="clause_one" #clause_one />
+            </div>
+            <div *ngIf="employee_contract_addForm.controls['clause_one'].invalid && (employee_contract_addForm.controls['clause_one'].dirty || employee_contract_addForm.controls['clause_one'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_addForm.controls['clause_one'].errors.required">
+                    Please Enter the clause_one
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">clause_two</label>
+                <input type="text" class="form-control" formControlName="clause_two" #clause_two />
+            </div>
+            <div *ngIf="employee_contract_addForm.controls['clause_two'].invalid && (employee_contract_addForm.controls['clause_two'].dirty || employee_contract_addForm.controls['clause_two'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_addForm.controls['clause_two'].errors.required">
+                    Please Enter the clause_two
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">clause_tree</label>
+                <input type="text" class="form-control" formControlName="clause_tree" #clause_tree />
+            </div>
+            <div *ngIf="employee_contract_addForm.controls['clause_tree'].invalid && (employee_contract_addForm.controls['clause_tree'].dirty || employee_contract_addForm.controls['clause_tree'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_addForm.controls['clause_tree'].errors.required">
+                    Please Enter the clause_tree
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">observations</label>
+                <input type="text" class="form-control" formControlName="observations" #observations />
+            </div>
+            <div *ngIf="employee_contract_addForm.controls['observations'].invalid && (employee_contract_addForm.controls['observations'].dirty || employee_contract_addForm.controls['observations'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_addForm.controls['observations'].errors.required">
+                    Please Enter the observations
+                </div>
+            </div>
+
+
+          
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="addEmployee_contract( number_contract.value,employee_id.value,clause_one.value,clause_two.value,clause_tree.value,observations.value )" [disabled]="!employee_contract_addForm.valid || employee_contract_addForm.pristine">Add Employee_contract</button>
+            </div>
+        </form>
+    </div>
+</div>
+

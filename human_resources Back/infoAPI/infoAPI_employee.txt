@@ -1,0 +1,29 @@
+
+INFORMACIÓN DE LA API
+
+Modelo: employee
+Atributos:
+employee_id first_name last_name role username password
+--------------------------------------------
+Ruta Base de la API: employee
+
+# CREATE: 
+url: localhost:3000/employee/add
+metodo: post
+
+# FIND-ALL: 
+url: localhost:3000/employee/
+metodo: get
+
+# FIND: 
+url: localhost:3000/employee/edit/:id
+metodo: get
+
+# UPDATE: 
+url: localhost:3000/employee/update/:id
+metodo: post
+
+# DELETE: 
+url: localhost:3000/employee/delete/:id
+metodo: get
+

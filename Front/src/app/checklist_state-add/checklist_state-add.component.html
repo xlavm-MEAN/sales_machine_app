@@ -1,0 +1,105 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="checklist_state_addForm" novalidate>
+
+            
+			<div class="form-group">
+                <label class="col-md-4">checklist_id</label>
+                <input type="text" class="form-control" formControlName="checklist_id" #checklist_id />
+            </div>
+            <div *ngIf="checklist_state_addForm.controls['checklist_id'].invalid && (checklist_state_addForm.controls['checklist_id'].dirty || checklist_state_addForm.controls['checklist_id'].touched)" class="alert alert-danger">
+                <div *ngIf="checklist_state_addForm.controls['checklist_id'].errors.required">
+                    Please Enter the checklist_id
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">serial_machine</label>
+                <input type="text" class="form-control" formControlName="serial_machine" #serial_machine />
+            </div>
+            <div *ngIf="checklist_state_addForm.controls['serial_machine'].invalid && (checklist_state_addForm.controls['serial_machine'].dirty || checklist_state_addForm.controls['serial_machine'].touched)" class="alert alert-danger">
+                <div *ngIf="checklist_state_addForm.controls['serial_machine'].errors.required">
+                    Please Enter the serial_machine
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">receipt_shopping</label>
+                <input type="text" class="form-control" formControlName="receipt_shopping" #receipt_shopping />
+            </div>
+            <div *ngIf="checklist_state_addForm.controls['receipt_shopping'].invalid && (checklist_state_addForm.controls['receipt_shopping'].dirty || checklist_state_addForm.controls['receipt_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="checklist_state_addForm.controls['receipt_shopping'].errors.required">
+                    Please Enter the receipt_shopping
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">checklist_date</label>
+                <input type="text" class="form-control" formControlName="checklist_date" #checklist_date />
+            </div>
+            <div *ngIf="checklist_state_addForm.controls['checklist_date'].invalid && (checklist_state_addForm.controls['checklist_date'].dirty || checklist_state_addForm.controls['checklist_date'].touched)" class="alert alert-danger">
+                <div *ngIf="checklist_state_addForm.controls['checklist_date'].errors.required">
+                    Please Enter the checklist_date
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">point1</label>
+                <input type="text" class="form-control" formControlName="point1" #point1 />
+            </div>
+            <div *ngIf="checklist_state_addForm.controls['point1'].invalid && (checklist_state_addForm.controls['point1'].dirty || checklist_state_addForm.controls['point1'].touched)" class="alert alert-danger">
+                <div *ngIf="checklist_state_addForm.controls['point1'].errors.required">
+                    Please Enter the point1
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">point2</label>
+                <input type="text" class="form-control" formControlName="point2" #point2 />
+            </div>
+            <div *ngIf="checklist_state_addForm.controls['point2'].invalid && (checklist_state_addForm.controls['point2'].dirty || checklist_state_addForm.controls['point2'].touched)" class="alert alert-danger">
+                <div *ngIf="checklist_state_addForm.controls['point2'].errors.required">
+                    Please Enter the point2
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">point3</label>
+                <input type="text" class="form-control" formControlName="point3" #point3 />
+            </div>
+            <div *ngIf="checklist_state_addForm.controls['point3'].invalid && (checklist_state_addForm.controls['point3'].dirty || checklist_state_addForm.controls['point3'].touched)" class="alert alert-danger">
+                <div *ngIf="checklist_state_addForm.controls['point3'].errors.required">
+                    Please Enter the point3
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">point4</label>
+                <input type="text" class="form-control" formControlName="point4" #point4 />
+            </div>
+            <div *ngIf="checklist_state_addForm.controls['point4'].invalid && (checklist_state_addForm.controls['point4'].dirty || checklist_state_addForm.controls['point4'].touched)" class="alert alert-danger">
+                <div *ngIf="checklist_state_addForm.controls['point4'].errors.required">
+                    Please Enter the point4
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">point5</label>
+                <input type="text" class="form-control" formControlName="point5" #point5 />
+            </div>
+            <div *ngIf="checklist_state_addForm.controls['point5'].invalid && (checklist_state_addForm.controls['point5'].dirty || checklist_state_addForm.controls['point5'].touched)" class="alert alert-danger">
+                <div *ngIf="checklist_state_addForm.controls['point5'].errors.required">
+                    Please Enter the point5
+                </div>
+            </div>
+
+
+          
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="addChecklist_state( checklist_id.value,serial_machine.value,receipt_shopping.value,checklist_date.value,point1.value,point2.value,point3.value,point4.value,point5.value )" [disabled]="!checklist_state_addForm.valid || checklist_state_addForm.pristine">Add Checklist_state</button>
+            </div>
+        </form>
+    </div>
+</div>
+

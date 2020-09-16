@@ -1,0 +1,1 @@
+receipt_sale seller_id invoice_id sale_date sale_value

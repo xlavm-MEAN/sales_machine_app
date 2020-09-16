@@ -1,0 +1,29 @@
+
+INFORMACIÓN DE LA API
+
+Modelo: checklist_state
+Atributos:
+checklist_id serial_machine receipt_shopping checklist_date point1 point2 point3 point4 point5
+--------------------------------------------
+Ruta Base de la API: checklist_state
+
+# CREATE: 
+url: localhost:3000/checklist_state/add
+metodo: post
+
+# FIND-ALL: 
+url: localhost:3000/checklist_state/
+metodo: get
+
+# FIND: 
+url: localhost:3000/checklist_state/edit/:id
+metodo: get
+
+# UPDATE: 
+url: localhost:3000/checklist_state/update/:id
+metodo: post
+
+# DELETE: 
+url: localhost:3000/checklist_state/delete/:id
+metodo: get
+

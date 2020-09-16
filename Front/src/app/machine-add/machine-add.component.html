@@ -1,0 +1,125 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="machine_addForm" novalidate>
+
+            
+			<div class="form-group">
+                <label class="col-md-4">serial</label>
+                <input type="text" class="form-control" formControlName="serial" #serial />
+            </div>
+            <div *ngIf="machine_addForm.controls['serial'].invalid && (machine_addForm.controls['serial'].dirty || machine_addForm.controls['serial'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['serial'].errors.required">
+                    Please Enter the serial
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">brand</label>
+                <input type="text" class="form-control" formControlName="brand" #brand />
+            </div>
+            <div *ngIf="machine_addForm.controls['brand'].invalid && (machine_addForm.controls['brand'].dirty || machine_addForm.controls['brand'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['brand'].errors.required">
+                    Please Enter the brand
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">model</label>
+                <input type="text" class="form-control" formControlName="model" #model />
+            </div>
+            <div *ngIf="machine_addForm.controls['model'].invalid && (machine_addForm.controls['model'].dirty || machine_addForm.controls['model'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['model'].errors.required">
+                    Please Enter the model
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">ubication</label>
+                <input type="text" class="form-control" formControlName="ubication" #ubication />
+            </div>
+            <div *ngIf="machine_addForm.controls['ubication'].invalid && (machine_addForm.controls['ubication'].dirty || machine_addForm.controls['ubication'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['ubication'].errors.required">
+                    Please Enter the ubication
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">price_shopping</label>
+                <input type="text" class="form-control" formControlName="price_shopping" #price_shopping />
+            </div>
+            <div *ngIf="machine_addForm.controls['price_shopping'].invalid && (machine_addForm.controls['price_shopping'].dirty || machine_addForm.controls['price_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['price_shopping'].errors.required">
+                    Please Enter the price_shopping
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">receipt_shopping</label>
+                <input type="text" class="form-control" formControlName="receipt_shopping" #receipt_shopping />
+            </div>
+            <div *ngIf="machine_addForm.controls['receipt_shopping'].invalid && (machine_addForm.controls['receipt_shopping'].dirty || machine_addForm.controls['receipt_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['receipt_shopping'].errors.required">
+                    Please Enter the receipt_shopping
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">creation_date</label>
+                <input type="text" class="form-control" formControlName="creation_date" #creation_date />
+            </div>
+            <div *ngIf="machine_addForm.controls['creation_date'].invalid && (machine_addForm.controls['creation_date'].dirty || machine_addForm.controls['creation_date'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['creation_date'].errors.required">
+                    Please Enter the creation_date
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">sale_date</label>
+                <input type="text" class="form-control" formControlName="sale_date" #sale_date />
+            </div>
+            <div *ngIf="machine_addForm.controls['sale_date'].invalid && (machine_addForm.controls['sale_date'].dirty || machine_addForm.controls['sale_date'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['sale_date'].errors.required">
+                    Please Enter the sale_date
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">seller_id</label>
+                <input type="text" class="form-control" formControlName="seller_id" #seller_id />
+            </div>
+            <div *ngIf="machine_addForm.controls['seller_id'].invalid && (machine_addForm.controls['seller_id'].dirty || machine_addForm.controls['seller_id'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['seller_id'].errors.required">
+                    Please Enter the seller_id
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">receipt_sale</label>
+                <input type="text" class="form-control" formControlName="receipt_sale" #receipt_sale />
+            </div>
+            <div *ngIf="machine_addForm.controls['receipt_sale'].invalid && (machine_addForm.controls['receipt_sale'].dirty || machine_addForm.controls['receipt_sale'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['receipt_sale'].errors.required">
+                    Please Enter the receipt_sale
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">state</label>
+                <input type="text" class="form-control" formControlName="state" #state />
+            </div>
+            <div *ngIf="machine_addForm.controls['state'].invalid && (machine_addForm.controls['state'].dirty || machine_addForm.controls['state'].touched)" class="alert alert-danger">
+                <div *ngIf="machine_addForm.controls['state'].errors.required">
+                    Please Enter the state
+                </div>
+            </div>
+
+
+          
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="addMachine( serial.value,brand.value,model.value,ubication.value,price_shopping.value,receipt_shopping.value,creation_date.value,sale_date.value,seller_id.value,receipt_sale.value,state.value )" [disabled]="!machine_addForm.valid || machine_addForm.pristine">Add Machine</button>
+            </div>
+        </form>
+    </div>
+</div>
+

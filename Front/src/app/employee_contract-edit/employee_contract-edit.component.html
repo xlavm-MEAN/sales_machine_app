@@ -1,0 +1,79 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="employee_contract_editForm" novalidate>
+			
+			
+			
+			<div class="form-group">
+                <label class="col-md-4">number_contract</label>
+                <input type="text" class="form-control" formControlName="number_contract" #number_contract [(ngModel)]="employee_contract.number_contract" />
+            </div>
+            <div *ngIf="employee_contract_editForm.controls['number_contract'].invalid && (employee_contract_editForm.controls['number_contract'].dirty || employee_contract_editForm.controls['number_contract'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_editForm.controls['number_contract'].errors.required">
+                    number_contract is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">employee_id</label>
+                <input type="text" class="form-control" formControlName="employee_id" #employee_id [(ngModel)]="employee_contract.employee_id" />
+            </div>
+            <div *ngIf="employee_contract_editForm.controls['employee_id'].invalid && (employee_contract_editForm.controls['employee_id'].dirty || employee_contract_editForm.controls['employee_id'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_editForm.controls['employee_id'].errors.required">
+                    employee_id is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">clause_one</label>
+                <input type="text" class="form-control" formControlName="clause_one" #clause_one [(ngModel)]="employee_contract.clause_one" />
+            </div>
+            <div *ngIf="employee_contract_editForm.controls['clause_one'].invalid && (employee_contract_editForm.controls['clause_one'].dirty || employee_contract_editForm.controls['clause_one'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_editForm.controls['clause_one'].errors.required">
+                    clause_one is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">clause_two</label>
+                <input type="text" class="form-control" formControlName="clause_two" #clause_two [(ngModel)]="employee_contract.clause_two" />
+            </div>
+            <div *ngIf="employee_contract_editForm.controls['clause_two'].invalid && (employee_contract_editForm.controls['clause_two'].dirty || employee_contract_editForm.controls['clause_two'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_editForm.controls['clause_two'].errors.required">
+                    clause_two is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">clause_tree</label>
+                <input type="text" class="form-control" formControlName="clause_tree" #clause_tree [(ngModel)]="employee_contract.clause_tree" />
+            </div>
+            <div *ngIf="employee_contract_editForm.controls['clause_tree'].invalid && (employee_contract_editForm.controls['clause_tree'].dirty || employee_contract_editForm.controls['clause_tree'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_editForm.controls['clause_tree'].errors.required">
+                    clause_tree is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">observations</label>
+                <input type="text" class="form-control" formControlName="observations" #observations [(ngModel)]="employee_contract.observations" />
+            </div>
+            <div *ngIf="employee_contract_editForm.controls['observations'].invalid && (employee_contract_editForm.controls['observations'].dirty || employee_contract_editForm.controls['observations'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_contract_editForm.controls['observations'].errors.required">
+                    observations is required.
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <button type="button" (click)="updateEmployee_contract(number_contract.value,employee_id.value,clause_one.value,clause_two.value,clause_tree.value,observations.value)" [disabled]="employee_contract_editForm.invalid"
+                    class="btn btn-primary">Update Employee_contract</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

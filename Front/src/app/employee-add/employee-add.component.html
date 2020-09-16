@@ -1,0 +1,75 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="employee_addForm" novalidate>
+
+            
+			<div class="form-group">
+                <label class="col-md-4">employee_id</label>
+                <input type="text" class="form-control" formControlName="employee_id" #employee_id />
+            </div>
+            <div *ngIf="employee_addForm.controls['employee_id'].invalid && (employee_addForm.controls['employee_id'].dirty || employee_addForm.controls['employee_id'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_addForm.controls['employee_id'].errors.required">
+                    Please Enter the employee_id
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">first_name</label>
+                <input type="text" class="form-control" formControlName="first_name" #first_name />
+            </div>
+            <div *ngIf="employee_addForm.controls['first_name'].invalid && (employee_addForm.controls['first_name'].dirty || employee_addForm.controls['first_name'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_addForm.controls['first_name'].errors.required">
+                    Please Enter the first_name
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">last_name</label>
+                <input type="text" class="form-control" formControlName="last_name" #last_name />
+            </div>
+            <div *ngIf="employee_addForm.controls['last_name'].invalid && (employee_addForm.controls['last_name'].dirty || employee_addForm.controls['last_name'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_addForm.controls['last_name'].errors.required">
+                    Please Enter the last_name
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">role</label>
+                <input type="text" class="form-control" formControlName="role" #role />
+            </div>
+            <div *ngIf="employee_addForm.controls['role'].invalid && (employee_addForm.controls['role'].dirty || employee_addForm.controls['role'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_addForm.controls['role'].errors.required">
+                    Please Enter the role
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">username</label>
+                <input type="text" class="form-control" formControlName="username" #username />
+            </div>
+            <div *ngIf="employee_addForm.controls['username'].invalid && (employee_addForm.controls['username'].dirty || employee_addForm.controls['username'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_addForm.controls['username'].errors.required">
+                    Please Enter the username
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">password</label>
+                <input type="text" class="form-control" formControlName="password" #password />
+            </div>
+            <div *ngIf="employee_addForm.controls['password'].invalid && (employee_addForm.controls['password'].dirty || employee_addForm.controls['password'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_addForm.controls['password'].errors.required">
+                    Please Enter the password
+                </div>
+            </div>
+
+
+          
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="addEmployee( employee_id.value,first_name.value,last_name.value,role.value,username.value,password.value )" [disabled]="!employee_addForm.valid || employee_addForm.pristine">Add Employee</button>
+            </div>
+        </form>
+    </div>
+</div>
+

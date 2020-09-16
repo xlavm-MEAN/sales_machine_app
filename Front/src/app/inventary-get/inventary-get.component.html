@@ -1,0 +1,30 @@
+
+<input class="form-control" type="text" name="search" placeholder="Search" [(ngModel)]="filter">
+<br>
+<table class="table table-bordered">
+    <thead style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:rgb(81, 81, 207)">
+        <tr>
+ 
+			<td> inventary_id </td><td> machine_serial </td><td> total_value </td><td> inventary_date </td>
+ 
+ 
+            <td>Edit</td>
+            <td> Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let inventary of inventary  | filter:filter">
+           
+
+		   <td>{{inventary.inventary_id}}</td><td>{{inventary.machine_serial}}</td><td>{{inventary.total_value}}</td><td>{{inventary.inventary_date}}</td>
+           
+		   
+            <td><a [routerLink]="['/inventary/edit',inventary._id]" class="btn btn-primary"><i class="far fa-edit"></i></a></td>
+            <td><a (click)="deleteInventary(inventary._id)" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<button routerLink="/inventary/create" class="btn btn-primary"><i class="fas fa-plus"></i>Add new</button> &nbsp;
+<button (click)="refresh()" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
+

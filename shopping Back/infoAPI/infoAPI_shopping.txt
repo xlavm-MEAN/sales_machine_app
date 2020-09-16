@@ -1,0 +1,29 @@
+
+INFORMACIÓN DE LA API
+
+Modelo: shopping
+Atributos:
+receipt_shopping seller_id provider_id price_shopping date_shopping
+--------------------------------------------
+Ruta Base de la API: shopping
+
+# CREATE: 
+url: localhost:3000/shopping/add
+metodo: post
+
+# FIND-ALL: 
+url: localhost:3000/shopping/
+metodo: get
+
+# FIND: 
+url: localhost:3000/shopping/edit/:id
+metodo: get
+
+# UPDATE: 
+url: localhost:3000/shopping/update/:id
+metodo: post
+
+# DELETE: 
+url: localhost:3000/shopping/delete/:id
+metodo: get
+

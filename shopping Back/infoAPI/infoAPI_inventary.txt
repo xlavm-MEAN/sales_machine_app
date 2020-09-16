@@ -1,0 +1,29 @@
+
+INFORMACIÓN DE LA API
+
+Modelo: inventary
+Atributos:
+inventary_id machine_serial total_value inventary_date
+--------------------------------------------
+Ruta Base de la API: inventary
+
+# CREATE: 
+url: localhost:3000/inventary/add
+metodo: post
+
+# FIND-ALL: 
+url: localhost:3000/inventary/
+metodo: get
+
+# FIND: 
+url: localhost:3000/inventary/edit/:id
+metodo: get
+
+# UPDATE: 
+url: localhost:3000/inventary/update/:id
+metodo: post
+
+# DELETE: 
+url: localhost:3000/inventary/delete/:id
+metodo: get
+

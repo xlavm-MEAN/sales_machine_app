@@ -1,0 +1,29 @@
+
+INFORMACIÓN DE LA API
+
+Modelo: employee_contract
+Atributos:
+number_contract employee_id clause_one clause_two clause_tree observations
+--------------------------------------------
+Ruta Base de la API: employee_contract
+
+# CREATE: 
+url: localhost:3000/employee_contract/add
+metodo: post
+
+# FIND-ALL: 
+url: localhost:3000/employee_contract/
+metodo: get
+
+# FIND: 
+url: localhost:3000/employee_contract/edit/:id
+metodo: get
+
+# UPDATE: 
+url: localhost:3000/employee_contract/update/:id
+metodo: post
+
+# DELETE: 
+url: localhost:3000/employee_contract/delete/:id
+metodo: get
+

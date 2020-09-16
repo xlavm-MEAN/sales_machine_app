@@ -1,0 +1,65 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="sale_cart_addForm" novalidate>
+
+            
+			<div class="form-group">
+                <label class="col-md-4">receipt_sale</label>
+                <input type="text" class="form-control" formControlName="receipt_sale" #receipt_sale />
+            </div>
+            <div *ngIf="sale_cart_addForm.controls['receipt_sale'].invalid && (sale_cart_addForm.controls['receipt_sale'].dirty || sale_cart_addForm.controls['receipt_sale'].touched)" class="alert alert-danger">
+                <div *ngIf="sale_cart_addForm.controls['receipt_sale'].errors.required">
+                    Please Enter the receipt_sale
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">seller_id</label>
+                <input type="text" class="form-control" formControlName="seller_id" #seller_id />
+            </div>
+            <div *ngIf="sale_cart_addForm.controls['seller_id'].invalid && (sale_cart_addForm.controls['seller_id'].dirty || sale_cart_addForm.controls['seller_id'].touched)" class="alert alert-danger">
+                <div *ngIf="sale_cart_addForm.controls['seller_id'].errors.required">
+                    Please Enter the seller_id
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">invoice_id</label>
+                <input type="text" class="form-control" formControlName="invoice_id" #invoice_id />
+            </div>
+            <div *ngIf="sale_cart_addForm.controls['invoice_id'].invalid && (sale_cart_addForm.controls['invoice_id'].dirty || sale_cart_addForm.controls['invoice_id'].touched)" class="alert alert-danger">
+                <div *ngIf="sale_cart_addForm.controls['invoice_id'].errors.required">
+                    Please Enter the invoice_id
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">sale_date</label>
+                <input type="text" class="form-control" formControlName="sale_date" #sale_date />
+            </div>
+            <div *ngIf="sale_cart_addForm.controls['sale_date'].invalid && (sale_cart_addForm.controls['sale_date'].dirty || sale_cart_addForm.controls['sale_date'].touched)" class="alert alert-danger">
+                <div *ngIf="sale_cart_addForm.controls['sale_date'].errors.required">
+                    Please Enter the sale_date
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">sale_value</label>
+                <input type="text" class="form-control" formControlName="sale_value" #sale_value />
+            </div>
+            <div *ngIf="sale_cart_addForm.controls['sale_value'].invalid && (sale_cart_addForm.controls['sale_value'].dirty || sale_cart_addForm.controls['sale_value'].touched)" class="alert alert-danger">
+                <div *ngIf="sale_cart_addForm.controls['sale_value'].errors.required">
+                    Please Enter the sale_value
+                </div>
+            </div>
+
+
+          
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="addSale_cart( receipt_sale.value,seller_id.value,invoice_id.value,sale_date.value,sale_value.value )" [disabled]="!sale_cart_addForm.valid || sale_cart_addForm.pristine">Add Sale_cart</button>
+            </div>
+        </form>
+    </div>
+</div>
+

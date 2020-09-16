@@ -1,0 +1,55 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="inventary_addForm" novalidate>
+
+            
+			<div class="form-group">
+                <label class="col-md-4">inventary_id</label>
+                <input type="text" class="form-control" formControlName="inventary_id" #inventary_id />
+            </div>
+            <div *ngIf="inventary_addForm.controls['inventary_id'].invalid && (inventary_addForm.controls['inventary_id'].dirty || inventary_addForm.controls['inventary_id'].touched)" class="alert alert-danger">
+                <div *ngIf="inventary_addForm.controls['inventary_id'].errors.required">
+                    Please Enter the inventary_id
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">machine_serial</label>
+                <input type="text" class="form-control" formControlName="machine_serial" #machine_serial />
+            </div>
+            <div *ngIf="inventary_addForm.controls['machine_serial'].invalid && (inventary_addForm.controls['machine_serial'].dirty || inventary_addForm.controls['machine_serial'].touched)" class="alert alert-danger">
+                <div *ngIf="inventary_addForm.controls['machine_serial'].errors.required">
+                    Please Enter the machine_serial
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">total_value</label>
+                <input type="text" class="form-control" formControlName="total_value" #total_value />
+            </div>
+            <div *ngIf="inventary_addForm.controls['total_value'].invalid && (inventary_addForm.controls['total_value'].dirty || inventary_addForm.controls['total_value'].touched)" class="alert alert-danger">
+                <div *ngIf="inventary_addForm.controls['total_value'].errors.required">
+                    Please Enter the total_value
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">inventary_date</label>
+                <input type="text" class="form-control" formControlName="inventary_date" #inventary_date />
+            </div>
+            <div *ngIf="inventary_addForm.controls['inventary_date'].invalid && (inventary_addForm.controls['inventary_date'].dirty || inventary_addForm.controls['inventary_date'].touched)" class="alert alert-danger">
+                <div *ngIf="inventary_addForm.controls['inventary_date'].errors.required">
+                    Please Enter the inventary_date
+                </div>
+            </div>
+
+
+          
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="addInventary( inventary_id.value,machine_serial.value,total_value.value,inventary_date.value )" [disabled]="!inventary_addForm.valid || inventary_addForm.pristine">Add Inventary</button>
+            </div>
+        </form>
+    </div>
+</div>
+

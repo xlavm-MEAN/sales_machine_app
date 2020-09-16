@@ -1,0 +1,30 @@
+
+<input class="form-control" type="text" name="search" placeholder="Search" [(ngModel)]="filter">
+<br>
+<table class="table table-bordered">
+    <thead style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:rgb(81, 81, 207)">
+        <tr>
+ 
+			<td> provider_id </td><td> social_reason </td><td> adress </td><td> telephone </td>
+ 
+ 
+            <td>Edit</td>
+            <td> Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let provider of provider  | filter:filter">
+           
+
+		   <td>{{provider.provider_id}}</td><td>{{provider.social_reason}}</td><td>{{provider.adress}}</td><td>{{provider.telephone}}</td>
+           
+		   
+            <td><a [routerLink]="['/provider/edit',provider._id]" class="btn btn-primary"><i class="far fa-edit"></i></a></td>
+            <td><a (click)="deleteProvider(provider._id)" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<button routerLink="/provider/create" class="btn btn-primary"><i class="fas fa-plus"></i>Add new</button> &nbsp;
+<button (click)="refresh()" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
+

@@ -1,0 +1,191 @@
+<!---<nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/">Home</a>
+            </li>
+
+            <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+                <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+                <a class="nav-link" routerLink="/register">Register</a>
+            </li>
+            <li *ngIf="auth.isLoggedIn()" class="nav-item">
+                <a class="nav-link" routerLink="/profile">{{ auth.getEmployeeDetails()?.complete_name }}</a>
+            </li>
+            <li *ngIf="auth.isLoggedIn()" class="nav-item">
+                <a class="nav-link" routerLink="/">{{ auth.getEmployeeDetails()?.role }}</a>
+            </li>
+            <li *ngIf="auth.isLoggedIn()" class="nav-item">
+                <a class="nav-link" routerLink="" (click)="auth.logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
+-->
+
+
+
+<!--ENCABEZADO DE LA PAGINA,...........................................................................-->
+<!--solo dejo que se vea el menu para cuando se esté logeado-->
+<header class="main-header" *ngIf="auth.isLoggedIn()">
+    <!-- Logo -->
+    <a routerLink="/" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>G</b>RA</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>GRAU</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav>
+        <!-- Sidebar toggle button-->
+        <a routerLink="/" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Navegación Colapsable</span>
+        </a>
+    </nav>
+</header>
+
+
+<!--MENU DE LA PAGINA..................................................................................-->
+<!--solo dejo que se vea el menu para cuando se esté logeado-->
+<aside class="main-sidebar" *ngIf="auth.isLoggedIn()">
+    <section class="sidebar">
+        <!-- ESCRIPCION DEL USUARIO--->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="assets/img/usuarios/avatar.jpg" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <P routerLink="/">{{ auth.getEmployeeDetails()?.first_name }}</P>
+                <a routerLink="/"><i class="fa fa-circle text-success"></i>{{ auth.getEmployeeDetails()?.role }}</a>
+            </div>
+        </div>
+        <!--/DESCRIPCION DEL USUARIO -->
+
+        <!-- BARRA OSCURA "BARRA DE NAVEGACION" -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">BARRA DE NAVEGACIÓN</li>
+
+            <li>
+                <a routerLink="/">
+                    <i class="fa fa-home"></i> <span>Inicio</span>
+                    <span class="pull-right-container"></span>
+                </a>
+            </li>
+
+            <!-- MENU DE PRESTAMOS-->
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-steam-square"></i>
+                    <span> Máquinas</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a routerLink="machine"><i class="fa fa-industry text-aqua"></i> Gestionar Máquinas</a></li>
+                    <li><a routerLink="inventary"><i class="fa fa-list text-yellow"></i> Gestionar Inventario</a></li>
+                    <li><a routerLink="checklist_state"><i class="fa fa-list text-yellow"></i> Gestionar CheckList</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-industry "></i>
+                    <span>Compras</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a routerLink="machine/create"><i class="fa fa-cart-plus text-green"></i> Realizar Compra</a></li>
+                    <li><a routerLink="shopping"><i class="fa fa-industry text-aqua"></i> Gestionar Compras</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-pie-chart "></i>
+                    <span>Ventas</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a routerLink="sale/create"><i class="fa fa-plus-circle text-green"></i> Realizar Venta</a></li>
+                    <li><a routerLink="sale"><i class="fa fa-wrench text-yellow"></i> Gestionar Ventas</a></li>
+                    <li><a routerLink="invoice"><i class="fa fa-paperclip text-aqua"></i> Gestionar Facturas</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-users "></i>
+                    <span>Empleados</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a routerLink="employee/create"><i class="fa fa-user-plus text-green"></i> Registrar Nuevo</a></li>
+                    <li><a routerLink="employee"><i class="fa fa-user text-aqua"></i> Gestionar Empleados</a></li>
+                    <li><a routerLink="employee_contract"><i class="fa fa-male text-yellow"></i> Gestionar Contratos</a></li>
+                    <li><a routerLink="employee_evaluation"><i class="fa fa-user-secret text-red "></i> Gestionar Evaluaciones</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-steam-square"></i>
+                    <span> Proveedores</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a routerLink="provider/create"><i class="fa fa-user-plus text-green"></i> Registrar Nuevo</a></li>
+                    <li><a routerLink="provider"><i class="fa fa-list text-yellow"></i> Gestionar Proveedores</a></li>
+                </ul>
+            </li>
+
+            <li class="header ">CONFIGURACIÓN</li>
+
+            <!--<li>
+                <a routerLink="/update ">
+                    <i class="fa fa-cogs "></i> <span>Actualice sus Datos</span>
+                    <span class="pull-right-container "></span>
+                </a>
+                </li>-->
+
+            <li>
+                <a routerLink="/profile">
+                    <i class="fa fa-cog "></i> <span>Ver Perfil</span>
+                    <span class="pull-right-container "></span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink=" " (click)="auth.logout() ">
+                    <i class="fa fa-sign-out "></i> <span>Salir</span>
+                    <span class="pull-right-container "></span>
+                </a>
+            </li>
+
+        </ul>
+    </section>
+</aside>
+<!--/MENU DE LA PAGINA.................................... -->
+
+
+<!--AQUÍ INICIA EL BODY desde la divición del contect-wrapper-->
+<div class="content-wrapper ">
+
+
+
+    <router-outlet></router-outlet>

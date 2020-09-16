@@ -1,0 +1,74 @@
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="employee_editForm" novalidate>
+
+
+
+            <div class="form-group">
+                <label class="col-md-4">employee_id</label>
+                <input type="text" class="form-control" formControlName="employee_id" #employee_id [(ngModel)]="employee.employee_id" />
+            </div>
+            <div *ngIf="employee_editForm.controls['employee_id'].invalid && (employee_editForm.controls['employee_id'].dirty || employee_editForm.controls['employee_id'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_editForm.controls['employee_id'].errors.required">
+                    employee_id is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">first_name</label>
+                <input type="text" class="form-control" formControlName="first_name" #first_name [(ngModel)]="employee.first_name" />
+            </div>
+            <div *ngIf="employee_editForm.controls['first_name'].invalid && (employee_editForm.controls['first_name'].dirty || employee_editForm.controls['first_name'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_editForm.controls['first_name'].errors.required">
+                    first_name is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">last_name</label>
+                <input type="text" class="form-control" formControlName="last_name" #last_name [(ngModel)]="employee.last_name" />
+            </div>
+            <div *ngIf="employee_editForm.controls['last_name'].invalid && (employee_editForm.controls['last_name'].dirty || employee_editForm.controls['last_name'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_editForm.controls['last_name'].errors.required">
+                    last_name is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">role</label>
+                <input type="text" class="form-control" formControlName="role" #role [(ngModel)]="employee.role" />
+            </div>
+            <div *ngIf="employee_editForm.controls['role'].invalid && (employee_editForm.controls['role'].dirty || employee_editForm.controls['role'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_editForm.controls['role'].errors.required">
+                    role is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">username</label>
+                <input type="text" class="form-control" formControlName="username" #username [(ngModel)]="employee.username" />
+            </div>
+            <div *ngIf="employee_editForm.controls['username'].invalid && (employee_editForm.controls['username'].dirty || employee_editForm.controls['username'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_editForm.controls['username'].errors.required">
+                    username is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">password</label>
+                <input type="text" class="form-control" formControlName="password" #password [(ngModel)]="employee.password" />
+            </div>
+            <div *ngIf="employee_editForm.controls['password'].invalid && (employee_editForm.controls['password'].dirty || employee_editForm.controls['password'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_editForm.controls['password'].errors.required">
+                    password is required.
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <button type="button" (click)="updateEmployee(employee_id.value,first_name.value,last_name.value,role.value,username.value,password.value)" [disabled]="employee_editForm.invalid" class="btn btn-primary">Update Employee</button>
+            </div>
+        </form>
+    </div>
+</div>

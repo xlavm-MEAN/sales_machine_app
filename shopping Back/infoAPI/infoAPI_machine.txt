@@ -1,0 +1,29 @@
+
+INFORMACIÓN DE LA API
+
+Modelo: machine
+Atributos:
+serial brand model ubication price_shopping receipt_shopping creation_date sale_date seller_id receipt_sale state
+--------------------------------------------
+Ruta Base de la API: machine
+
+# CREATE: 
+url: localhost:3000/machine/add
+metodo: post
+
+# FIND-ALL: 
+url: localhost:3000/machine/
+metodo: get
+
+# FIND: 
+url: localhost:3000/machine/edit/:id
+metodo: get
+
+# UPDATE: 
+url: localhost:3000/machine/update/:id
+metodo: post
+
+# DELETE: 
+url: localhost:3000/machine/delete/:id
+metodo: get
+

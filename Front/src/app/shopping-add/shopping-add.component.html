@@ -1,0 +1,65 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="shopping_addForm" novalidate>
+
+            
+			<div class="form-group">
+                <label class="col-md-4">receipt_shopping</label>
+                <input type="text" class="form-control" formControlName="receipt_shopping" #receipt_shopping />
+            </div>
+            <div *ngIf="shopping_addForm.controls['receipt_shopping'].invalid && (shopping_addForm.controls['receipt_shopping'].dirty || shopping_addForm.controls['receipt_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="shopping_addForm.controls['receipt_shopping'].errors.required">
+                    Please Enter the receipt_shopping
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">seller_id</label>
+                <input type="text" class="form-control" formControlName="seller_id" #seller_id />
+            </div>
+            <div *ngIf="shopping_addForm.controls['seller_id'].invalid && (shopping_addForm.controls['seller_id'].dirty || shopping_addForm.controls['seller_id'].touched)" class="alert alert-danger">
+                <div *ngIf="shopping_addForm.controls['seller_id'].errors.required">
+                    Please Enter the seller_id
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">provider_id</label>
+                <input type="text" class="form-control" formControlName="provider_id" #provider_id />
+            </div>
+            <div *ngIf="shopping_addForm.controls['provider_id'].invalid && (shopping_addForm.controls['provider_id'].dirty || shopping_addForm.controls['provider_id'].touched)" class="alert alert-danger">
+                <div *ngIf="shopping_addForm.controls['provider_id'].errors.required">
+                    Please Enter the provider_id
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">price_shopping</label>
+                <input type="text" class="form-control" formControlName="price_shopping" #price_shopping />
+            </div>
+            <div *ngIf="shopping_addForm.controls['price_shopping'].invalid && (shopping_addForm.controls['price_shopping'].dirty || shopping_addForm.controls['price_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="shopping_addForm.controls['price_shopping'].errors.required">
+                    Please Enter the price_shopping
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">date_shopping</label>
+                <input type="text" class="form-control" formControlName="date_shopping" #date_shopping />
+            </div>
+            <div *ngIf="shopping_addForm.controls['date_shopping'].invalid && (shopping_addForm.controls['date_shopping'].dirty || shopping_addForm.controls['date_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="shopping_addForm.controls['date_shopping'].errors.required">
+                    Please Enter the date_shopping
+                </div>
+            </div>
+
+
+          
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="addShopping( receipt_shopping.value,seller_id.value,provider_id.value,price_shopping.value,date_shopping.value )" [disabled]="!shopping_addForm.valid || shopping_addForm.pristine">Add Shopping</button>
+            </div>
+        </form>
+    </div>
+</div>
+

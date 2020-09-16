@@ -1,0 +1,30 @@
+
+<input class="form-control" type="text" name="search" placeholder="Search" [(ngModel)]="filter">
+<br>
+<table class="table table-bordered">
+    <thead style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:rgb(81, 81, 207)">
+        <tr>
+ 
+			<td> checklist_id </td><td> serial_machine </td><td> receipt_shopping </td><td> checklist_date </td><td> point1 </td><td> point2 </td><td> point3 </td><td> point4 </td><td> point5 </td>
+ 
+ 
+            <td>Edit</td>
+            <td> Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let checklist_state of checklist_state  | filter:filter">
+           
+
+		   <td>{{checklist_state.checklist_id}}</td><td>{{checklist_state.serial_machine}}</td><td>{{checklist_state.receipt_shopping}}</td><td>{{checklist_state.checklist_date}}</td><td>{{checklist_state.point1}}</td><td>{{checklist_state.point2}}</td><td>{{checklist_state.point3}}</td><td>{{checklist_state.point4}}</td><td>{{checklist_state.point5}}</td>
+           
+		   
+            <td><a [routerLink]="['/checklist_state/edit',checklist_state._id]" class="btn btn-primary"><i class="far fa-edit"></i></a></td>
+            <td><a (click)="deleteChecklist_state(checklist_state._id)" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<button routerLink="/checklist_state/create" class="btn btn-primary"><i class="fas fa-plus"></i>Add new</button> &nbsp;
+<button (click)="refresh()" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
+

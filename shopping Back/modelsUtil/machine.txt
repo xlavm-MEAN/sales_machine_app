@@ -1,0 +1,1 @@
+serial brand model ubication price_shopping receipt_shopping creation_date sale_date seller_id receipt_sale state

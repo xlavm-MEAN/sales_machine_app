@@ -1,0 +1,30 @@
+
+<input class="form-control" type="text" name="search" placeholder="Search" [(ngModel)]="filter">
+<br>
+<table class="table table-bordered">
+    <thead style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:rgb(81, 81, 207)">
+        <tr>
+ 
+			<td> evaluation_number </td><td> employee_id </td><td> result_evaluation </td><td> point1 </td><td> point2 </td><td> point3 </td><td> point4 </td><td> point5 </td>
+ 
+ 
+            <td>Edit</td>
+            <td> Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee_evaluation of employee_evaluation  | filter:filter">
+           
+
+		   <td>{{employee_evaluation.evaluation_number}}</td><td>{{employee_evaluation.employee_id}}</td><td>{{employee_evaluation.result_evaluation}}</td><td>{{employee_evaluation.point1}}</td><td>{{employee_evaluation.point2}}</td><td>{{employee_evaluation.point3}}</td><td>{{employee_evaluation.point4}}</td><td>{{employee_evaluation.point5}}</td>
+           
+		   
+            <td><a [routerLink]="['/employee_evaluation/edit',employee_evaluation._id]" class="btn btn-primary"><i class="far fa-edit"></i></a></td>
+            <td><a (click)="deleteEmployee_evaluation(employee_evaluation._id)" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<button routerLink="/employee_evaluation/create" class="btn btn-primary"><i class="fas fa-plus"></i>Add new</button> &nbsp;
+<button (click)="refresh()" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
+

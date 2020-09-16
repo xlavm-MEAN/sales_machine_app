@@ -1,0 +1,36 @@
+<input class="form-control" type="text" name="search" placeholder="Search" [(ngModel)]="filter">
+<br>
+<table class="table table-bordered">
+    <thead style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:rgb(81, 81, 207)">
+        <tr>
+
+            <td> receipt_shopping </td>
+            <td> seller_id </td>
+            <td> provider_id </td>
+            <td> price_shopping </td>
+            <td> date_shopping </td>
+
+
+            <td>Edit</td>
+            <td> Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let shopping of shopping  | filter:filter">
+
+
+            <td>{{shopping.receipt_shopping}}</td>
+            <td>{{shopping.seller_id}}</td>
+            <td>{{shopping.provider_id}}</td>
+            <td>{{shopping.price_shopping}}</td>
+            <td>{{shopping.date_shopping}}</td>
+
+
+            <td><a [routerLink]="['/shopping/edit',shopping._id]" class="btn btn-primary"><i class="far fa-edit"></i></a></td>
+            <td><a (click)="deleteShopping(shopping._id)" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<button routerLink="/machine/create" class="btn btn-primary"><i class="fas fa-plus"></i>Add new</button> &nbsp;
+<button (click)="refresh()" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>

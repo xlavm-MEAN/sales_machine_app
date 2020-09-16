@@ -1,0 +1,59 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="provider_editForm" novalidate>
+			
+			
+			
+			<div class="form-group">
+                <label class="col-md-4">provider_id</label>
+                <input type="text" class="form-control" formControlName="provider_id" #provider_id [(ngModel)]="provider.provider_id" />
+            </div>
+            <div *ngIf="provider_editForm.controls['provider_id'].invalid && (provider_editForm.controls['provider_id'].dirty || provider_editForm.controls['provider_id'].touched)" class="alert alert-danger">
+                <div *ngIf="provider_editForm.controls['provider_id'].errors.required">
+                    provider_id is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">social_reason</label>
+                <input type="text" class="form-control" formControlName="social_reason" #social_reason [(ngModel)]="provider.social_reason" />
+            </div>
+            <div *ngIf="provider_editForm.controls['social_reason'].invalid && (provider_editForm.controls['social_reason'].dirty || provider_editForm.controls['social_reason'].touched)" class="alert alert-danger">
+                <div *ngIf="provider_editForm.controls['social_reason'].errors.required">
+                    social_reason is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">adress</label>
+                <input type="text" class="form-control" formControlName="adress" #adress [(ngModel)]="provider.adress" />
+            </div>
+            <div *ngIf="provider_editForm.controls['adress'].invalid && (provider_editForm.controls['adress'].dirty || provider_editForm.controls['adress'].touched)" class="alert alert-danger">
+                <div *ngIf="provider_editForm.controls['adress'].errors.required">
+                    adress is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">telephone</label>
+                <input type="text" class="form-control" formControlName="telephone" #telephone [(ngModel)]="provider.telephone" />
+            </div>
+            <div *ngIf="provider_editForm.controls['telephone'].invalid && (provider_editForm.controls['telephone'].dirty || provider_editForm.controls['telephone'].touched)" class="alert alert-danger">
+                <div *ngIf="provider_editForm.controls['telephone'].errors.required">
+                    telephone is required.
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <button type="button" (click)="updateProvider(provider_id.value,social_reason.value,adress.value,telephone.value)" [disabled]="provider_editForm.invalid"
+                    class="btn btn-primary">Update Provider</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,1 @@
+receipt_shopping seller_id provider_id price_shopping date_shopping

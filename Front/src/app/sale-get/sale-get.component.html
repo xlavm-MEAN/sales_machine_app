@@ -1,0 +1,30 @@
+
+<input class="form-control" type="text" name="search" placeholder="Search" [(ngModel)]="filter">
+<br>
+<table class="table table-bordered">
+    <thead style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:rgb(81, 81, 207)">
+        <tr>
+ 
+			<td> receipt_sale </td><td> seller_id </td><td> invoice_id </td><td> sale_date </td><td> sale_value </td>
+ 
+ 
+            <td>Edit</td>
+            <td> Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let sale of sale  | filter:filter">
+           
+
+		   <td>{{sale.receipt_sale}}</td><td>{{sale.seller_id}}</td><td>{{sale.invoice_id}}</td><td>{{sale.sale_date}}</td><td>{{sale.sale_value}}</td>
+           
+		   
+            <td><a [routerLink]="['/sale/edit',sale._id]" class="btn btn-primary"><i class="far fa-edit"></i></a></td>
+            <td><a (click)="deleteSale(sale._id)" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<button routerLink="/sale/create" class="btn btn-primary"><i class="fas fa-plus"></i>Add new</button> &nbsp;
+<button (click)="refresh()" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
+

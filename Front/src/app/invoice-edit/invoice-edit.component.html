@@ -1,0 +1,69 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="invoice_editForm" novalidate>
+			
+			
+			
+			<div class="form-group">
+                <label class="col-md-4">invoice_id</label>
+                <input type="text" class="form-control" formControlName="invoice_id" #invoice_id [(ngModel)]="invoice.invoice_id" />
+            </div>
+            <div *ngIf="invoice_editForm.controls['invoice_id'].invalid && (invoice_editForm.controls['invoice_id'].dirty || invoice_editForm.controls['invoice_id'].touched)" class="alert alert-danger">
+                <div *ngIf="invoice_editForm.controls['invoice_id'].errors.required">
+                    invoice_id is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">seller_id</label>
+                <input type="text" class="form-control" formControlName="seller_id" #seller_id [(ngModel)]="invoice.seller_id" />
+            </div>
+            <div *ngIf="invoice_editForm.controls['seller_id'].invalid && (invoice_editForm.controls['seller_id'].dirty || invoice_editForm.controls['seller_id'].touched)" class="alert alert-danger">
+                <div *ngIf="invoice_editForm.controls['seller_id'].errors.required">
+                    seller_id is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">receipt_sale</label>
+                <input type="text" class="form-control" formControlName="receipt_sale" #receipt_sale [(ngModel)]="invoice.receipt_sale" />
+            </div>
+            <div *ngIf="invoice_editForm.controls['receipt_sale'].invalid && (invoice_editForm.controls['receipt_sale'].dirty || invoice_editForm.controls['receipt_sale'].touched)" class="alert alert-danger">
+                <div *ngIf="invoice_editForm.controls['receipt_sale'].errors.required">
+                    receipt_sale is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">value</label>
+                <input type="text" class="form-control" formControlName="value" #value [(ngModel)]="invoice.value" />
+            </div>
+            <div *ngIf="invoice_editForm.controls['value'].invalid && (invoice_editForm.controls['value'].dirty || invoice_editForm.controls['value'].touched)" class="alert alert-danger">
+                <div *ngIf="invoice_editForm.controls['value'].errors.required">
+                    value is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">date</label>
+                <input type="text" class="form-control" formControlName="date" #date [(ngModel)]="invoice.date" />
+            </div>
+            <div *ngIf="invoice_editForm.controls['date'].invalid && (invoice_editForm.controls['date'].dirty || invoice_editForm.controls['date'].touched)" class="alert alert-danger">
+                <div *ngIf="invoice_editForm.controls['date'].errors.required">
+                    date is required.
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <button type="button" (click)="updateInvoice(invoice_id.value,seller_id.value,receipt_sale.value,value.value,date.value)" [disabled]="invoice_editForm.invalid"
+                    class="btn btn-primary">Update Invoice</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

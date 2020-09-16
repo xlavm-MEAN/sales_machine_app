@@ -1,0 +1,99 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="employee_evaluation_editForm" novalidate>
+			
+			
+			
+			<div class="form-group">
+                <label class="col-md-4">evaluation_number</label>
+                <input type="text" class="form-control" formControlName="evaluation_number" #evaluation_number [(ngModel)]="employee_evaluation.evaluation_number" />
+            </div>
+            <div *ngIf="employee_evaluation_editForm.controls['evaluation_number'].invalid && (employee_evaluation_editForm.controls['evaluation_number'].dirty || employee_evaluation_editForm.controls['evaluation_number'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_evaluation_editForm.controls['evaluation_number'].errors.required">
+                    evaluation_number is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">employee_id</label>
+                <input type="text" class="form-control" formControlName="employee_id" #employee_id [(ngModel)]="employee_evaluation.employee_id" />
+            </div>
+            <div *ngIf="employee_evaluation_editForm.controls['employee_id'].invalid && (employee_evaluation_editForm.controls['employee_id'].dirty || employee_evaluation_editForm.controls['employee_id'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_evaluation_editForm.controls['employee_id'].errors.required">
+                    employee_id is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">result_evaluation</label>
+                <input type="text" class="form-control" formControlName="result_evaluation" #result_evaluation [(ngModel)]="employee_evaluation.result_evaluation" />
+            </div>
+            <div *ngIf="employee_evaluation_editForm.controls['result_evaluation'].invalid && (employee_evaluation_editForm.controls['result_evaluation'].dirty || employee_evaluation_editForm.controls['result_evaluation'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_evaluation_editForm.controls['result_evaluation'].errors.required">
+                    result_evaluation is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">point1</label>
+                <input type="text" class="form-control" formControlName="point1" #point1 [(ngModel)]="employee_evaluation.point1" />
+            </div>
+            <div *ngIf="employee_evaluation_editForm.controls['point1'].invalid && (employee_evaluation_editForm.controls['point1'].dirty || employee_evaluation_editForm.controls['point1'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_evaluation_editForm.controls['point1'].errors.required">
+                    point1 is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">point2</label>
+                <input type="text" class="form-control" formControlName="point2" #point2 [(ngModel)]="employee_evaluation.point2" />
+            </div>
+            <div *ngIf="employee_evaluation_editForm.controls['point2'].invalid && (employee_evaluation_editForm.controls['point2'].dirty || employee_evaluation_editForm.controls['point2'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_evaluation_editForm.controls['point2'].errors.required">
+                    point2 is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">point3</label>
+                <input type="text" class="form-control" formControlName="point3" #point3 [(ngModel)]="employee_evaluation.point3" />
+            </div>
+            <div *ngIf="employee_evaluation_editForm.controls['point3'].invalid && (employee_evaluation_editForm.controls['point3'].dirty || employee_evaluation_editForm.controls['point3'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_evaluation_editForm.controls['point3'].errors.required">
+                    point3 is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">point4</label>
+                <input type="text" class="form-control" formControlName="point4" #point4 [(ngModel)]="employee_evaluation.point4" />
+            </div>
+            <div *ngIf="employee_evaluation_editForm.controls['point4'].invalid && (employee_evaluation_editForm.controls['point4'].dirty || employee_evaluation_editForm.controls['point4'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_evaluation_editForm.controls['point4'].errors.required">
+                    point4 is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">point5</label>
+                <input type="text" class="form-control" formControlName="point5" #point5 [(ngModel)]="employee_evaluation.point5" />
+            </div>
+            <div *ngIf="employee_evaluation_editForm.controls['point5'].invalid && (employee_evaluation_editForm.controls['point5'].dirty || employee_evaluation_editForm.controls['point5'].touched)" class="alert alert-danger">
+                <div *ngIf="employee_evaluation_editForm.controls['point5'].errors.required">
+                    point5 is required.
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <button type="button" (click)="updateEmployee_evaluation(evaluation_number.value,employee_id.value,result_evaluation.value,point1.value,point2.value,point3.value,point4.value,point5.value)" [disabled]="employee_evaluation_editForm.invalid"
+                    class="btn btn-primary">Update Employee_evaluation</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

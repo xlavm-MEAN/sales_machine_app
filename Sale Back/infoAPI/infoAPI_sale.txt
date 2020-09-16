@@ -1,0 +1,29 @@
+
+INFORMACIÓN DE LA API
+
+Modelo: sale
+Atributos:
+receipt_sale seller_id invoice_id sale_date sale_value
+--------------------------------------------
+Ruta Base de la API: sale
+
+# CREATE: 
+url: localhost:3000/sale/add
+metodo: post
+
+# FIND-ALL: 
+url: localhost:3000/sale/
+metodo: get
+
+# FIND: 
+url: localhost:3000/sale/edit/:id
+metodo: get
+
+# UPDATE: 
+url: localhost:3000/sale/update/:id
+metodo: post
+
+# DELETE: 
+url: localhost:3000/sale/delete/:id
+metodo: get
+

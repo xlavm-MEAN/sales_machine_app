@@ -1,0 +1,69 @@
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="shopping_editForm" novalidate>
+			
+			
+			
+			<div class="form-group">
+                <label class="col-md-4">receipt_shopping</label>
+                <input type="text" class="form-control" formControlName="receipt_shopping" #receipt_shopping [(ngModel)]="shopping.receipt_shopping" />
+            </div>
+            <div *ngIf="shopping_editForm.controls['receipt_shopping'].invalid && (shopping_editForm.controls['receipt_shopping'].dirty || shopping_editForm.controls['receipt_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="shopping_editForm.controls['receipt_shopping'].errors.required">
+                    receipt_shopping is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">seller_id</label>
+                <input type="text" class="form-control" formControlName="seller_id" #seller_id [(ngModel)]="shopping.seller_id" />
+            </div>
+            <div *ngIf="shopping_editForm.controls['seller_id'].invalid && (shopping_editForm.controls['seller_id'].dirty || shopping_editForm.controls['seller_id'].touched)" class="alert alert-danger">
+                <div *ngIf="shopping_editForm.controls['seller_id'].errors.required">
+                    seller_id is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">provider_id</label>
+                <input type="text" class="form-control" formControlName="provider_id" #provider_id [(ngModel)]="shopping.provider_id" />
+            </div>
+            <div *ngIf="shopping_editForm.controls['provider_id'].invalid && (shopping_editForm.controls['provider_id'].dirty || shopping_editForm.controls['provider_id'].touched)" class="alert alert-danger">
+                <div *ngIf="shopping_editForm.controls['provider_id'].errors.required">
+                    provider_id is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">price_shopping</label>
+                <input type="text" class="form-control" formControlName="price_shopping" #price_shopping [(ngModel)]="shopping.price_shopping" />
+            </div>
+            <div *ngIf="shopping_editForm.controls['price_shopping'].invalid && (shopping_editForm.controls['price_shopping'].dirty || shopping_editForm.controls['price_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="shopping_editForm.controls['price_shopping'].errors.required">
+                    price_shopping is required.
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-4">date_shopping</label>
+                <input type="text" class="form-control" formControlName="date_shopping" #date_shopping [(ngModel)]="shopping.date_shopping" />
+            </div>
+            <div *ngIf="shopping_editForm.controls['date_shopping'].invalid && (shopping_editForm.controls['date_shopping'].dirty || shopping_editForm.controls['date_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="shopping_editForm.controls['date_shopping'].errors.required">
+                    date_shopping is required.
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <button type="button" (click)="updateShopping(receipt_shopping.value,seller_id.value,provider_id.value,price_shopping.value,date_shopping.value)" [disabled]="shopping_editForm.invalid"
+                    class="btn btn-primary">Update Shopping</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

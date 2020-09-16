@@ -16,7 +16,7 @@ Application of sales for machines with architecture in microservices and API Res
 * OS: Ubuntu 18.04
 
 # Architecture
-App Infrastructurein the AWS Cloud
+App Infrastructure in the AWS Cloud
 
 ![MEAN Todo](screenshots/CloudArchitectureAWS.jpg)
 
